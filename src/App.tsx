@@ -1,21 +1,44 @@
-import {Container} from "./components/Container/Container";
-import { Heading } from "./components/Heading/Heading";
+import { Container } from "./components/Container/Container";
+import { Logo } from "./components/Logo";
+import { Menu } from "./components/Menu";
+import { CountDown } from "./components/CountDown";
 
 export function App() {
-return (
-  <>
-    <Container>
-        <Heading>LOGO</Heading>
-    </Container>
-  <Container>
-       <section>MENU</section>
-  </Container>
-    <Container>
-        <section>FORM</section>
-    </Container>
-  <Container>
-      <section>FOOTER</section>
-    </Container>
-  </>
+  return (
+    <>
+      <Container>
+        <Logo />
+      </Container>
+      <Container>
+        <Menu />
+      </Container>
+      <Container>
+        <section>MENU</section>
+      </Container>
+      <Container>
+        <CountDown />
+      </Container>
+
+      <Container>
+      <form className="form" action="">
+         <div className="formRow">
+            {/* <DefaultInput type="text" />  */}
+         </div>
+           <div className="formRow">
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+         </div>
+          <div className="formRow">
+              <p>Ciclos</p>
+              <p>00 00 00 00 00</p>
+          </div>
+           <div className="formRow">
+             <button type="submit">Add Task</button>
+          </div>
+      </form>
+      </Container>
+      <Container>
+        <section>FOOTER</section>
+      </Container>
+    </>
   );
 }
