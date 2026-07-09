@@ -2,6 +2,9 @@ import { Container } from "./components/Container/Container";
 import { Logo } from "./components/Logo";
 import { Menu } from "./components/Menu";
 import { CountDown } from "./components/CountDown";
+import { DefaultInput } from "./components/DefaultInput";
+
+<DefaultInput/>
 
 export function App() {
   return (
