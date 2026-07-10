@@ -1,11 +1,20 @@
-import type React from "react";
-type DefaultInputProps = { type: 'text' | 'number' | 'search' | 'email' | 'password' } & React.ComponentProps<'input'>;
+import React from 'react';
+import styles from './styles.module.css';
 
-export function DefaultInput( {type} : DefaultInputProps) {
-    return (
-      <div>
-        <label htmlFor="myInput">task</label>
-        <input id="myInput" type="{type}"  />
-      </div>
-    ); 
+type DefaultInputProps = {} & React.ComponentProps<'input'>;
+
+export function DefaultInput({ type = 'text', ...rest }: DefaultInputProps) {
+  return (
+    <div className={styles.inputWrapper}>
+      <label htmlFor={rest.id || 'default-input'} className={styles.label}>
+        {rest.placeholder || 'Campo'}
+      </label>
+      <input
+        id={rest.id || 'default-input'}
+        type={type}
+        className={styles.input}
+        {...rest}
+      />
+    </div>
+  );
 }
