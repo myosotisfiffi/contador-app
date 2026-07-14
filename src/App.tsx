@@ -4,7 +4,7 @@ import { Menu } from "./components/Menu";
 import { CountDown } from "./components/CountDown";
 import { DefaultInput } from "./components/DefaultInput";
 
-<DefaultInput/>
+<DefaultInput />;
 
 export function App() {
   return (
@@ -16,28 +16,30 @@ export function App() {
         <Menu />
       </Container>
       <Container>
-        <section>MENU</section>
-      </Container>
-      <Container>
         <CountDown />
       </Container>
 
       <Container>
-      <form className="form" action="">
-         <div className="formRow">
-            {/* <DefaultInput type="text" />  */}
-         </div>
-           <div className="formRow">
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
-         </div>
+        <form className="form" action="">
           <div className="formRow">
-              <p>Ciclos</p>
-              <p>00 00 00 00 00</p>
+          <DefaultInput
+                labelText="Task"
+                id="myInput"
+                type="text"
+                placeholder="Enter your task"
+                required />
           </div>
-           <div className="formRow">
-             <button type="submit">Add Task</button>
+          <div className="formRow">
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
           </div>
-      </form>
+          <div className="formRow">
+            <p>Ciclos</p>
+            <p>00 00 00 00 00</p>
+          </div>
+          <div className="formRow">
+            <button type="submit">Add Task</button>
+          </div>
+        </form>
       </Container>
       <Container>
         <section>FOOTER</section>
