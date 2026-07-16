@@ -3,8 +3,11 @@ import { Logo } from "./components/Logo";
 import { Menu } from "./components/Menu";
 import { CountDown } from "./components/CountDown";
 import { DefaultInput } from "./components/DefaultInput";
-
-<DefaultInput />;
+import { Cycles } from "./components/Cycles";
+import { DefaultButton } from "./components/DefaultButton";
+import { PlayCircleIcon } from "lucide-react"; 
+ 
+ 
 
 export function App() {
   return (
@@ -22,12 +25,16 @@ export function App() {
       <Container>
         <form className="form" action="">
           <div className="formRow">
+            <Cycles />
           <DefaultInput
                 labelText="Task"
                 id="myInput"
                 type="text"
                 placeholder="Enter your task"
                 required />
+                <DefaultButton
+                  icon={<PlayCircleIcon />}
+                   onClick={handleStartTimer}/>
           </div>
           <div className="formRow">
             <p>Lorem ipsum dolor sit amet consectetur.</p>

@@ -33,3 +33,8 @@
   flex-direction: column;
   gap: 2.4rem;
 }
+.label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-default, #ffffff);
+}
