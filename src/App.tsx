@@ -6,6 +6,7 @@ import { DefaultInput } from "./components/DefaultInput";
 import { Cycles } from "./components/Cycles";
 import { DefaultButton } from "./components/DefaultButton";
 import { PlayCircleIcon } from "lucide-react"; 
+import { Footer } from "./components/Footer";
  
  
 
@@ -34,7 +35,8 @@ export function App() {
                 required />
                 <DefaultButton
                   icon={<PlayCircleIcon />}
-                   onClick={handleStartTimer}/>
+                  // onClick={handleStartTimer}
+            />
           </div>
           <div className="formRow">
             <p>Lorem ipsum dolor sit amet consectetur.</p>
@@ -49,7 +51,7 @@ export function App() {
         </form>
       </Container>
       <Container>
-        <section>FOOTER</section>
+        <Footer />
       </Container>
     </>
   );
