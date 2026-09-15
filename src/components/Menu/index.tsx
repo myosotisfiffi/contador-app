@@ -15,48 +15,59 @@ export function Menu() {
     const storageTheme = localStorage.getItem("theme") as AvailableThemes;
     return storageTheme || "dark";
   });
-
   const nextThemeIcon = {
     dark: <SunIcon />,
     light: <MoonIcon />,
   };
 
-  function handleThemeChange( useEffect(() => {
-  localStorage.setItem("theme", theme);
-  document.documentElement.setAttribute("data-theme", theme);
-}, [theme]);
+  function handleThemeChange(event: React.MouseEvent) {
+    event.preventDefault();
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  }
 
-return (
-  <nav className={style.menu}>
-    <a
-      className={style.menuLink}
-      href="#"
-      aria-label="Ir para a Home"
-      title="Ir para a Home"
-    >
-      <TimerIcon />
-    </a>
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
 
-    <a
-      className={style.menuLink}
-      href="#"
-      aria-label="Ver histórico de tarefas"
-      title="Ver histórico de tarefas"
-    >
-      <HistoryIcon />
-    </a>
+  return (
+    <nav className={style.menu}>
+      <a
+        className={style.menuLink}
+        href="#"
+        aria-label="Ir para a Home"
+        title="Ir para a Home"
+      >
+        <TimerIcon />
+      </a>
 
-    <a
-      className={style.menuLink}
-      href="#"
-      aria-label="Ver configurações"
-      title="Ver configurações"
-    >
-      <SettingsIcon />
-    </a>
+      <a
+        className={style.menuLink}
+        href="#"
+        aria-label="Ver histórico de tarefas"
+        title="Ver histórico de tarefas"
+      >
+        <HistoryIcon />
+      </a>
 
-    {nextThemeIcon[theme]}
-  </a>   {/* ← erro de estrutura aqui */}
-  </nav>
-);
+      <a
+        className={style.menuLink}
+        href="#"
+        aria-label="Ver configurações"
+        title="Ver configurações"
+      >
+        <SettingsIcon />
+      </a>
+
+      <a
+        className={style.menuLink}
+        href="#"
+        aria-label="Alternar tema"
+        title="Alternar tema"
+        onClick={handleThemeChange}
+      >
+        {nextThemeIcon[theme]}
+      </a>
+    </nav>
+  );
 }

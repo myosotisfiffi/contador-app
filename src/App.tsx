@@ -10,7 +10,8 @@ import { Footer } from "./components/Footer";
 import { useState } from "react";
 import { Heading } from "./components/Heading";
 import { ThemeToggle } from "./components/ThemeToggle";
-
+import { TaskContextProvider } from "./contexts/TaskContext/TaskContextProvider";
+import { Home } from "./pages/Home";
 
 export function App() {
   const [numero, setNumero] = useState(0);
@@ -20,6 +21,15 @@ export function App() {
   }
     return (
       <>
+      <TaskContextProvider>
+      <Home />
+    </TaskContextProvider>
+      <TaskContextProvider>
+      <Home />
+    </TaskContextProvider>
+      <Home>
+
+      </Home>
         <Heading>
           Contar ciclos: {numero}
           <button onClick={handleClick}>Contar +1</button>
@@ -32,7 +42,6 @@ export function App() {
                 <Menu />
                 <ThemeToggle />
           </div>
-         
         </Container>
         <Container>
           <CountDown />
